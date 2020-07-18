@@ -27,7 +27,7 @@ class Main extends React.Component {
                     </Link>
                     <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end" >
                         <Nav className="text-white" >
-                            <Link to='/cart'><Navbar.Text>Your Cart</Navbar.Text></Link>
+                            <Link to='/cart'><Navbar.Text className="text-white">Your Cart</Navbar.Text></Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
