@@ -3,11 +3,13 @@ const app = express()
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const product = require('./Routes/product')
+const dotenv = require("dotenv");
+dotenv.config();
 // BODYPARSER
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 //Mooongose connection 
-mongoose.connect('mongodb+srv://raiseit:raiseit@cluster0-hls40.mongodb.net/Asg?retryWrites=true&w=majority',
+mongoose.connect(process.env.Mongo,
     { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false },
     () => {
         console.log("DB connected");
