@@ -57,6 +57,7 @@ Solution : Inner and outer joins combine rows from two or more tables into a sin
 The most common case for this is when you’re matching the foreign key of one table to the primary key of another, such as when using an ID to look up a value.
 Though both inner and outer joins include rows from both tables when the match condition is successful, they differ in how they handle a false match condition.
 Inner joins don’t include non-matching rows; whereas, outer joins do include them.
+
 Q7) What is Cache? Where does cache lie in an Operating System? Difference between Cache and HashMap. 
 Solution : Cache memory is an extremely fast memory type that acts as a buffer between RAM and the CPU. It holds frequently requested data and instructions so that they are immediately available to the CPU when needed. Cache memory is used to reduce the average time to access data from the Main memory.
 
