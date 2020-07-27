@@ -1,0 +1,33 @@
+body{
+  margin:0;
+  overflow-x: hidden;
+  background-color: rgb(141, 139, 139);
+}
+.img-wrapper{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  /* border: 1px solid blueviolet; */
+}
+.carousel{
+  border: 1px solid blueviolet;
+  flex: 3;
+}
+.App{
+  position: relative;
+  width: auto;
+  /* border: 1px solid blueviolet; */
+}
+.functions{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+img:hover{
+  transform: scale(1.2);
+
+}
+#myCarousel{
+  top: 32rem;
+}
