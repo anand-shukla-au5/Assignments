@@ -17,7 +17,7 @@ const Login = () => {
             }).then((res) => {
                 console.log("Login res", res);
                 localStorage.setItem("auth-token", res.data.token);
-                console.log(res.data.user)
+                localStorage.setItem("user", res.data.user.email);
                 history.push("/home");
             }).catch((err) => {
                 setError("User not Found Please Register");

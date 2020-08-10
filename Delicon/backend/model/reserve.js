@@ -4,12 +4,18 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    table: {
+    floor: {
+        type: String,
+        required: true,
+    },
+    people: {
         type: Number,
         required: true,
-        max: 40,
-        min: 1,
     },
+    food: {
+        type: String,
+        required: true,
+    }
 });
 var reservation = mongoose.model("reserves", userSchema);
 module.exports = reservation;

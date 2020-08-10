@@ -3,6 +3,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const loginSignup = require('./route/loginSignup')
+const rest = require('./route/reservations')
 const dotenv = require("dotenv");
 dotenv.config();
 // BODYPARSER
@@ -28,6 +29,7 @@ app.use(function (req, res, next) {
     next();
 });
 app.use(loginSignup)
+app.use(rest)
 app.get('/', (req, res) => {
     res.send("HELLO World")
 })

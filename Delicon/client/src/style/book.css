@@ -1,0 +1,7 @@
+.container-fluid{
+    background-color: honeydew;
+    color: black;
+}
+.container-fluid input,textarea{
+    color: black !important;
+}
