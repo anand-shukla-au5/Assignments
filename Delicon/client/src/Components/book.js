@@ -19,11 +19,13 @@ const Book = () => {
         else {
             setEmail(localStorage.getItem("user"))
             setToken(localStorage.getItem("auth-token"))
+            let auth = localStorage.getItem("auth-token")
+            console.log("ASDAS", auth)
             axios({
                 method: 'POST',
-                url: '/read',
+                url: 'http://localhost:8080/read',
                 data: { email },
-                headers: { "auth-token": token }
+                headers: { "auth-token": auth }
             }).then(res => {
                 console.log(res)
             }).catch(err => {
@@ -39,7 +41,7 @@ const Book = () => {
             try {
                 let res = axios({
                     method: 'POST',
-                    url: '/create',
+                    url: 'http://localhost:8080/create',
                     data: { name, floor, people, food, email },
                     headers: { "auth-token": token }
                 })

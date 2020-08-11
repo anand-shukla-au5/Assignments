@@ -15,7 +15,7 @@ const Signup = () => {
         if (cpass === password && name !== "" && email !== "" && password !== "") {
             axios({
                 method: "post",
-                url: "http://localhost:2020/register",
+                url: "http://localhost:8080/register",
                 data: { name, email, password },
             }).then((res) => {
                 console.log("Login res", res);

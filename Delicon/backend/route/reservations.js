@@ -14,11 +14,13 @@ router.post('/read', userValid, async (req, res) => {
     }
 })
 router.post('/create', userValid, async (req, res) => {
+    console.log(req.body)
     const { name, food, people, floor } = req.body
     let found = await userModewl.findOne({ email: req.body.email })
     try {
-        let reserve = await reservation({ name, food, people, floor })
-        found.reservation.push(reserve)
+        let reserves = await new reservation({ name, food, people, floor })
+        reserves.save()
+        found.reservation.push(reserves)
         found.save()
         res.json(found)
     } catch (err) {
@@ -28,7 +30,7 @@ router.post('/create', userValid, async (req, res) => {
 router.put('/edit', userValid, async (req, res) => {
     let found = await userModewl.findOne({ email: req.body.email })
     try {
-        let reserve = await reservation.findOne({ name, food, people, floor })
+        let reserve = await reservation.findOneAndUpdate()
         found.reservation.push(reserve)
         found.save()
         res.json(found)

@@ -12,7 +12,7 @@ const Login = () => {
         if (email !== "" && password !== "") {
             axios({
                 method: "post",
-                url: "http://localhost:2020/login",
+                url: "http://localhost:8080/login",
                 data: { email, password },
             }).then((res) => {
                 console.log("Login res", res);
