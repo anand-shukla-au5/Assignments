@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+}
+body {
+  background-color: whitesmoke;
+}
+.userContent {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.userHead {
+  color: cornflowerblue;
+  font-size: 40px;
+  margin: 10px;
+}
+.userlink {
+  text-decoration: none;
+}
+.userCard {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  border: lightslategray 2px dotted;
+  border-radius: 15px 50px;
+  background-color: lightgrey;
+  color: darkslategray;
+  padding: 30px;
+  margin: 30px;
+}
+.userLink > img {
+  margin-top: 5px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profileContainer {
+  width: 60%;
+  margin: 10px;
+  border: skyblue 2px solid;
+  padding: 15px;
+  background-color: rgb(177, 199, 221);
+}
+.profileContainer > div > img {
+  border-radius: 20%;
+  object-fit: cover;
+  width: 200px;
+}
+.profileData {
+  display: flex;
+  flex-direction: column;
+}
