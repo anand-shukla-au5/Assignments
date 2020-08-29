@@ -36,18 +36,21 @@ body {
   object-fit: cover;
 }
 .profileContainer {
+  box-shadow: 0 30px 6px -6px rgb(80, 76, 76);
+  margin-left: auto !important;
+  margin-right: auto !important;
   width: 60%;
   margin: 10px;
   border: skyblue 2px solid;
   padding: 15px;
   background-color: rgb(177, 199, 221);
+  border-radius: 10px 15px;
 }
 .profileContainer > div > img {
   border-radius: 20%;
   object-fit: cover;
+  margin: 10px;
   width: 200px;
 }
 .profileData {
-  display: flex;
-  flex-direction: column;
 }

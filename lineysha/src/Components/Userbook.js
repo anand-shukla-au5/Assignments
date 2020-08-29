@@ -23,9 +23,7 @@ export default function Userbook() {
           </h1>
           <div className="profileData">
             <img src={userdata.avatar} alt="" />
-            <ul>
-              <li>{userdata.email}</li>
-            </ul>
+            <p>{userdata.email}</p>
           </div>
         </div>
       )}
