@@ -17,24 +17,29 @@ function Home() {
   useEffect(() => {
     let arr = [];
     users.forEach((el) => {
-      console.log(el.first_name);
-      if (el.first_name.includes(query) || el.last_name.includes(query)) {
-        return arr.push(el);
+      if (
+        el.first_name.toLowerCase().includes(query.toLowerCase()) ||
+        el.last_name.toLowerCase().includes(query.toLowerCase())
+      ) {
+        arr.push(el);
       }
     });
-    console.log(arr);
+    setFilter(arr);
   }, [query, users]);
-  console.log("Ser", users, query, filter);
+  console.log("Ser", users, query, "FIlter", filter);
   return (
     <>
       <Nav query={setQuery} />
       <div className="container">
         <h1 className="userHead">User List</h1>
         <div className="userContent">
-          {users &&
-            users.map((el) => {
-              return <Usercard key={el.id} data={el} />;
-            })}
+          {filter.length > 0
+            ? filter.map((el) => {
+                return <Usercard key={el.id} data={el} />;
+              })
+            : users.map((el) => {
+                return <Usercard key={el.id} data={el} />;
+              })}
         </div>
       </div>
     </>
