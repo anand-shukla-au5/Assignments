@@ -46,11 +46,27 @@ body {
   background-color: rgb(177, 199, 221);
   border-radius: 10px 15px;
 }
-.profileContainer > div > img {
+.profileData > div > img {
   border-radius: 20%;
+  margin-right: 12px;
   object-fit: cover;
   margin: 10px;
   width: 200px;
 }
 .profileData {
+  display: flex;
+  text-align: center;
+}
+.profileData > p {
+  margin: 15px;
+}
+.calender {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+@media only screen and (max-width: 1000px) {
+  .profileData {
+    display: flex;
+    flex-direction: column;
+  }
 }
