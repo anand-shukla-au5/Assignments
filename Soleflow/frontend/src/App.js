@@ -45,7 +45,7 @@ class App extends React.Component {
     console.log("Show psots", this.props.posts)
     return (
       <div className="App">
-        <Navbar bg="dark" variant="dark">
+        <Navbar className="nav-bar" bg="dark" variant="dark">
           <Navbar.Brand href="#home">Home</Navbar.Brand>
         </Navbar>
         <div className="container mt-5">
