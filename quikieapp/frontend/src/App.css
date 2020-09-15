@@ -1,0 +1,36 @@
+.navBar{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.heroCards{
+    display: flex;
+    justify-content: center;
+}
+.hero{
+    width: 20rem;
+    height: 10rem;
+    margin: 1.5rem 1.5rem;
+    background-color: aliceblue;
+    border: rgb(185, 181, 175) 1px dotted;
+}
+.heroImg{
+    float: right;
+    object-fit: cover;
+}
+.heroText{
+    /* float: left; */
+    font-size: larger;
+    margin-top: 3rem
+}
+.stockDetail{
+    border: rgb(185, 181, 175) 1px dotted;
+}
+@media only screen and (max-width: 800px){
+    .heroCards{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
