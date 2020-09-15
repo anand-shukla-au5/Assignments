@@ -3,7 +3,7 @@ import { Navbar } from 'react-bootstrap'
 export default function Nav() {
     return (
         <Navbar className="navBar" bg="dark" variant="dark" expand="lg" >
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/">
                 {/* <img
                     alt=""
                     src="/logo.svg"

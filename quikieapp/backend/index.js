@@ -2,12 +2,14 @@ const express = require('express');
 const app = express()
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
-// const post = require('./Routes/posts')
+const stocks = require('./Routes/stocks')
 // BODYPARSER
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+const dotenv = require("dotenv");
+dotenv.config();
 //Mooongose connection 
-mongoose.connect("mongodb://localhost:27017/fbpost",
+mongoose.connect(process.env.Mongo,
     { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false },
     () => {
         console.log("DB connected");
@@ -27,7 +29,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-// app.use(post)
+app.use(stocks)
 
 app.get('/', (req, res) => {
     res.send("Hello World")

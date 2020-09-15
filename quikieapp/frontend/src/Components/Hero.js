@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
-// import { } "../Style/Assets"
 import { Card } from "react-bootstrap"
 
 function Hero() {
@@ -17,9 +16,6 @@ function Hero() {
         })
         setValue(val)
     }
-    useEffect(() => {
-
-    }, [value])
     useEffect(() => {
         fetchData()
     }, [])

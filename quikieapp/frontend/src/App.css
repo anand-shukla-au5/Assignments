@@ -26,11 +26,23 @@
 .stockDetail{
     border: rgb(185, 181, 175) 1px dotted;
 }
+.stockNav{
+    display: flex;
+    justify-content: space-between;    
+}
 @media only screen and (max-width: 800px){
     .heroCards{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .stockNav{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .search{
+        margin: 8px 0;
     }
 }
