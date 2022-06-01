@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Button, Row, Col } from 'react-bootstrap'
+import { Container, Button, Row, Col, Navbar, NavDropdown, Nav } from 'react-bootstrap'
 import SideBar from './SideBar'
 import {
     UilBars,
@@ -15,7 +15,19 @@ const styles = {
     chart: {
         width: '100%',
         overflowX: 'auto',
-    }
+    },
+    sideBarbutton: {
+        height: '40px',
+        width: '45px',
+        position: 'absolute',
+        left: '12px',
+        top: '18px',
+    },
+    summaryContent: {
+        background: '#f0f7fa',
+        margin: '2.5rem',
+        padding: '1.5rem',
+    },
 }
 function Dashboard({ isloggedin, setisloggedin }) {
     const [show, setShow] = useState(false);
@@ -45,42 +57,65 @@ function Dashboard({ isloggedin, setisloggedin }) {
     }, [isloggedin])
     return (
         <Container fluid className="p-2">
-            <SideBar handleClose={handleClose} setisloggedin={setisloggedin} show={show} />
             <Row>
-                <Col className="p-2 rounded-lg" sm={12} lg={6} md={12}>
-                    <Row>
-                        <Col xs={1} className="justify-content-sm-center">
-                            <Button variant="secondary" size="sm" className="m-2">
-                                <UilBars onClick={handleShow} />
-                            </Button>
-                        </Col>
-                        <Col p={0} m={0}>
-                            <div>
-                                <h3 className="mt-2">Overview Shop</h3>
+                <Col className="rounded-lg" sm={12} lg={5} md={12}>
+                    <SideBar handleClose={handleClose} setisloggedin={setisloggedin} show={show} />
+                    <Button style={styles.sideBarbutton} variant="secondary" size="sm">
+                        <UilBars onClick={handleShow} />
+                    </Button>
+                    <Row className="p-3">
+                        <Col xs={12}>
+                            <div style={{ marginLeft: '60px' }}>
+                                <h3 className="mt-1">Overview Shop</h3>
                                 <h5 className="text-muted">Welcome Natalia</h5>
                             </div>
+                        </Col>
+                        <Col xs={12}>
                             {summary &&
                                 <>
-                                    <div className="d-flex flex-wrap justify-content-between mx-2 my-2">
+                                    <div className="d-flex flex-wrap justify-content-evenly mx-2 my-2">
                                         {Object.keys(summary.data.overview).map((el, i) =>
                                             <Cards key={i} title={el.toUpperCase()} val={summary.data.overview[el]} color={cardColor[i]} />
                                         )}
                                     </div>
-                                    <div className="p-3 mb-4">
-                                        <Summary summary={summary.data.summary} />
-                                    </div>
+                                    <Row style={styles.summaryContent}>
+                                        <Col xs={2}>
+
+                                        </Col>
+                                        <Col xs={10}>
+                                            <Summary summary={summary.data.summary} />
+                                        </Col>
+                                    </Row>
                                 </>
                             }
+                        </Col>
+                        <Col xs={12}>
                             {sevenDay.length !== 0 && <div style={styles.chart}>
+                                <Navbar expand="lg" className="mb-3">
+                                    <Container>
+                                        <Navbar.Brand style={{ borderBottom: '2px solid blue' }} href="#home">Revenue</Navbar.Brand>
+                                        <Navbar.Brand href="#home">Orders</Navbar.Brand>
+                                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                                        <Navbar.Collapse id="basic-navbar-nav">
+                                            <Navbar.Text>
+                                                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                                                    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                                </NavDropdown>
+                                            </Navbar.Text>
+                                        </Navbar.Collapse>
+                                    </Container>
+                                </Navbar>
                                 <Linechart data={sevenDay} />
                             </div>}
                         </Col>
                     </Row>
                 </Col>
-                <Col style={{ "overflowX": 'hidden', "background": '#f0f7fa' }} className="p-2 rounded-lg" sm={12} lg={6} md={12}>
+                <Col style={{ "overflowX": 'hidden', "background": '#f0f7fa' }} className="p-5 rounded-lg" sm={12} lg={7} md={12}>
                     {orderList &&
-                        <div class="d-flex flex-column justify-content-center">
-                            <h3 className="mt-2 ml-5">Latest Orders</h3>
+                        <div className="d-flex flex-column justify-content-center">
+                            <h3 className="mb-4 ml-5">Latest Orders</h3>
                             <Table tabledata={orderList.data} pageData={orderList.pagination} fetchorderList={fetchorderList} />
                         </div>
                     }

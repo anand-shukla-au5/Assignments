@@ -1,23 +1,32 @@
 import React from 'react'
-import { ListGroup, Badge } from 'react-bootstrap'
+import { ListGroup, Stack } from 'react-bootstrap'
+const styles = {
+    listItem: {
+        borderBottom: '1px solid lightgrey',
+        padding: '6px',
+    },
+    percentInfo: {
+        color: 'grey',
+    },
+    countInfo: {
+        fontWeight: 'bold',
+    }
+}
 function Summary({ summary }) {
     return (
-        <ListGroup variant="flush" as="ol">
-            {summary?.length && summary.map((el, key) =>
-                <ListGroup.Item
-                    key={key}
-                    variant="info"
-                    as="li"
-                    className="d-flex justify-content-between align-items-start"
-                >
-                    <div className="ms-2 me-auto">
-                        <div className="fw-bold">{el.order_status}</div>
+        <ListGroup variant="flush" as="ul">
+            <Stack gap={2}>
+                {summary?.length && summary.map((el, key) =>
+                    <div style={styles.listItem} key={key} className='d-flex'>
+                        <div className="ms-2 me-auto">
+                            <div className="fw-normal">{el.order_status}</div>
+                        </div>
+                        <div style={styles.countInfo}>
+                            {el.count}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style={styles.percentInfo}>{el.count / 10}%</span>
+                        </div>
                     </div>
-                    <Badge bg="success" pill>
-                        {el.count}
-                    </Badge>
-                </ListGroup.Item>
-            )}
+                )}
+            </Stack>
         </ListGroup>
     )
 }
