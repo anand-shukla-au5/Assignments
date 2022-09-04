@@ -72,7 +72,7 @@ const FilterImage: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <ImageResults checkedValues={checkedArr} myImages={[...imageGallery.arrGallery]} />
+            <ImageResults checkedValues={checkedArr} myImages={[...imageGallery.arrGallery]} setcheckedArr={setcheckedArr} />
         </>
     );
 }
