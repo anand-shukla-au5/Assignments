@@ -1,0 +1,26 @@
+[
+    {
+        "Counseller": "James",
+        "LeadAssin": "sdwa",
+        "SpotConversions": 45,
+        "TotalLeadsConversion": 5,
+        "TotalAmount": 45,
+        "Achived": 65
+    },
+    {
+        "Counseller": "Wiz",
+        "LeadAssin": "sdwa",
+        "SpotConversions": 45,
+        "TotalLeadsConversion": 5,
+        "TotalAmount": 45,
+        "Achived": 65
+    },
+    {
+        "Counseller": "Oz",
+        "LeadAssin": "sdwa",
+        "SpotConversions": 45,
+        "TotalLeadsConversion": 5,
+        "TotalAmount": 45,
+        "Achived": 65
+    }
+]
