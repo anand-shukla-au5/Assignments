@@ -21,7 +21,7 @@ mongoose.connection.on('error', (err) => {
 app.use('/renewlsClinet', require('./Routes/renewlsClinet'));
 app.use('/renewedClients', require('./Routes/renewedClients'));
 app.use('/activeClinetsData', require('./Routes/activeClinets'));
-app.use('/allClinets', require('./Routes/allClinets'));
+app.use('/allClinetsData', require('./Routes/allClinets'));
 app.use('/expriryClinets', require('./Routes/expriryClinets'));
 app.use('/ptClients', require('./Routes/ptClients'));
 app.use('/dietNutricationCilents', require('./Routes/dietNutricationCilents'));
