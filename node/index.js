@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //Mooongose connection 
-mongoose.connect('mongodb://localhost:27017/business',
+mongoose.connect('mongodb://localhost:27017/groupClients',
     () => {
         console.log("DB connected");
     }
@@ -18,11 +18,18 @@ mongoose.connection.on('error', (err) => {
 });
 
 //ROUTES 
-app.use('/salesclosure', require('./Routes/salesRoute'));
-app.use('/clientclosure', require('./Routes/clientRoute'));
-app.use('/leadtarget', require('./Routes/leadRoute'));
-app.use('/renewaltarget', require('./Routes/renewalRoute'));
-
+app.use('/renewlsClinet', require('./Routes/renewlsClinet'));
+app.use('/renewedClients', require('./Routes/renewedClients'));
+app.use('/activeClinets', require('./Routes/activeClinets'));
+app.use('/allClinets', require('./Routes/allClinets'));
+app.use('/expriryClinets', require('./Routes/expriryClinets'));
+app.use('/ptClients', require('./Routes/ptClients'));
+app.use('/dietNutricationCilents', require('./Routes/dietNutricationCilents'));
+app.use('/teacherTraningCilents', require('./Routes/teacherTraningCilents'));
+app.use('/groupTranings', require('./Routes/groupTranings'));
+app.use('/allBatches', require('./Routes/allBatches'));
+app.use('/referrers', require('./Routes/referrers'));
+app.use('/irregularMembers', require('./Routes/irregularMembers'));
 
 app.listen(5000, function () {
     console.log('listening on port', port);
